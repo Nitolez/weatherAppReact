@@ -1,0 +1,60 @@
+@import '../utils/mixins.scss';
+
+
+.form{
+    @include column;
+    gap:16px;
+    align-items: center;
+
+    
+    &>div{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        border: 2px solid blue;
+        max-width: 70%;
+        padding: 20px;
+        border-radius: 20px;
+        margin: 20px 0px;
+        @include shadow($light-blue);
+        align-items: center;
+
+        &>img{
+            width: 20%;
+        }
+    }
+
+    
+    &>form{
+       @include column;
+       gap: 8px; 
+       padding: 32px 16px; 
+       min-width: 66%;
+       @include shadow($light-blue);
+        
+
+       &>div{
+           width: 100%;
+           display: flex;
+           justify-content: space-between;
+       }
+    
+    }
+
+    &>button{
+        border-radius: 20px;
+        margin-bottom: 40px;
+    }
+    &>input{
+        border-radius: 30px;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        width: 30%;
+        height: 50px;
+        text-align: center;
+    }
+    &>section{
+        @include column;
+        align-items: center;
+    }
+}
