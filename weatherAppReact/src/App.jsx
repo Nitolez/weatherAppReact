@@ -4,12 +4,12 @@ import Form from './components/Main/Form';
 import WeatherList from './components/Main/WeatherList';
 
 const App = () => {
-  const [value, setValue] = useState('Madrid'); // Inicializa con "Madrid"
-  const [weather, setWeather] = useState(null); // Para guardar los datos del pronóstico
-  const [loading, setLoading] = useState(false); // Para manejar el estado de carga
-  const [error, setError] = useState(null); // Para manejar los errores
+  const [value, setValue] = useState('Madrid'); 
+  const [weather, setWeather] = useState(null); 
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null); 
 
-  const API_key = '82f25798751871eb4b1d98477ad8d702'; // Reemplaza con tu clave API
+  const API_key = 'introduce tu api Key'; 
 
   // Equivale a un componentDidUpdate()
   useEffect(() => {
@@ -24,14 +24,14 @@ const App = () => {
         setWeather(data);
       } catch (e) {
         setError('Error al obtener los datos del clima');
-        setWeather(null); // No pintes nada 
+        setWeather(null);
       } finally {
         setLoading(false);
       }
     }
 
     fetchData();
-  }, [value]); // componentDidUpdate
+  }, [value]); 
 
   const handleFormSubmit = (city) => {
     setValue(city);
