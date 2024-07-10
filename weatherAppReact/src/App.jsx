@@ -11,13 +11,11 @@ const App = () => {
 
   const API_key = 'introduce tu api Key'; 
 
-  // Equivale a un componentDidUpdate()
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
       setError(null);
       try {
-        // Petición HTTP
         const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${value}&units=metric&appid=${API_key}&lang=es`);
         const data = res.data;
 
